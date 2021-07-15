@@ -23,4 +23,6 @@ class Scoreboard(Turtle):
         self.goto(0, 0)
         self.write(f"GAME OVER", align=ALIGNMENT, font=FONT)
         self.goto(0, -40)
-        self.write("Press Space to restart", align=ALIGNMENT, font=FONT)
+        self.write("Press Space to Restart", align=ALIGNMENT, font=FONT)
+        self.goto(0, -70)
+        self.write("or press q to Exit", align=ALIGNMENT, font=FONT)

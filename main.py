@@ -26,7 +26,8 @@ def start_game():
     screen.onkey(fun=snake.right, key="d")
     screen.onkey(fun=snake.up, key="w")
     screen.onkey(fun=snake.down, key="s")
-    # screen.reset()
+    screen.onkey(fun=screen.bye, key="q")
+    screen.onkey(fun=restart_game, key="space")
     game_is_on = True
     while game_is_on:
         screen.update()
@@ -56,5 +57,5 @@ def restart_game():
 
 
 start_game()
-screen.onkey(fun=restart_game, key="space")
+
 screen.exitonclick()

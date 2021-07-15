@@ -13,6 +13,7 @@ class Snake:
         self.body_length = 3
         self.create_snake()
         self.head = self.segments[0]
+        self.last_input = 0
 
     def create_snake(self):
         for position in STARTING_POSITION:
@@ -31,21 +32,22 @@ class Snake:
     def move(self):
         self.follow_body()
         self.head.forward(MOVE_DISTANCE)
+        self.last_input = self.head.heading()
 
     def up(self):
-        if self.head.heading() != DOWN:
+        if self.last_input != DOWN:
             self.head.setheading(UP)
 
     def down(self):
-        if self.head.heading() != UP:
+        if self.last_input != UP:
             self.head.setheading(DOWN)
 
     def left(self):
-        if self.head.heading() != RIGHT:
+        if self.last_input != RIGHT:
             self.head.setheading(LEFT)
 
     def right(self):
-        if self.head.heading() != LEFT:
+        if self.last_input != LEFT:
             self.head.setheading(RIGHT)
 
     def follow_body(self):
