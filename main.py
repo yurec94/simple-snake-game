@@ -34,6 +34,6 @@ while game_is_on:
         food.random_position()
         snake.add_part()
         score.add_score()
-        print("+1")
+
 
 screen.exitonclick()
