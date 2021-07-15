@@ -13,6 +13,6 @@ class Food(Turtle):
         self.random_position()
 
     def random_position(self):
-        x = random.randint(-280, 280)
-        y = random.randint(-280, 280)
+        x = random.randint(-260, 260)
+        y = random.randint(-260, 260)
         self.goto(x, y)

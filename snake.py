@@ -16,11 +16,17 @@ class Snake:
 
     def create_snake(self):
         for position in STARTING_POSITION:
-            turtle = Turtle(shape="square")
-            turtle.color("white")
-            turtle.penup()
-            self.segments.append(turtle)
-            turtle.goto(position)
+            self.add_part(position)
+
+    def add_part(self, position):
+        body_part = Turtle(shape="square")
+        body_part.color("white")
+        body_part.penup()
+        body_part.goto(position)
+        self.segments.append(body_part)
+
+    def extend(self):
+        self.add_part(self.segments[-1].position())
 
     def move(self):
         self.follow_body()
@@ -45,17 +51,4 @@ class Snake:
     def follow_body(self):
         for part in range(len(self.segments)-1, 0, -1):
             self.segments[part].goto(self.segments[part - 1].pos())
-        # if self.head.xcor() > 290 or self.head.xcor() < -300:
-        #     self.restart_game()
 
-    def add_part(self):
-        body_part = Turtle(shape="square")
-        body_part.penup()
-        body_part.hideturtle()
-        self.segments.append(body_part)
-        body_part.color("white")
-        body_part.showturtle()
-
-    # def restart_game(self):
-    #     Screen().reset()
-    #     self.__init__()
